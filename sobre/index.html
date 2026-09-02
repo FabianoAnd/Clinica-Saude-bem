@@ -6,146 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagina Inicial</title>
   <style>
-.sobre {
-    width: 90%;
-    max-width: 665px;
-    margin: 0 auto;
-    padding: 19px 0 45px;
-}
-
-
-.sobre h1 {
-    width: 170px;
-    margin: 0 auto 32px;
-
-    background-color: #42afe2;
-    color: white;
-
-    text-align: center;
-
-    font-size: 21px;
-    font-weight: normal;
-    line-height: 1.2;
-
-    padding: 3px 10px;
-    border-radius: 8px;
-}
-
-
-.sobre-conteudo {
-  display: grid;
-
-grid-template-columns: 330px 330px;
-column-gap: 16px;
-
-justify-content: center;
-}
-
-
-
-.sobre-imagem-1 {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.sobre-imagem-1 img {
-    width: 330px;
-    height: 218px;
-
-    display: block;
-
-    object-fit: cover;
-
-    border-radius: 7px;
-}
-
-
-
-
-.sobre-texto-1 {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.sobre-texto-1 p {
-    margin: 0;
-
-    color: #42afe2;
-
-    font-size: 12px;
-    line-height: 1.25;
-
-    text-align: left;
-}
-
-
-
-
-.sobre-logo {
-    grid-column: 1;
-    grid-row: 2;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 70px;
-}
-
-.sobre-logo img {
-    width: 95px;
-    height: auto;
-}
-
-
-
-
-.sobre-texto-2 {
-    grid-column: 1;
-    grid-row: 3;
-
-    width: 265px;
-
-    margin-left: 33px;
-}
-
-.sobre-texto-2 p {
-    margin: 0;
-
-    color: #42afe2;
-
-    font-size: 14px;
-    line-height: 1.25;
-
-    text-align: left;
-}
-
-
-
-
-.sobre-imagem-2 {
-    grid-column: 2;
-    grid-row: 3;
-
-    margin-top: 43px;
-}
-
-.sobre-imagem-2 img {
-    width: 330px;
-    height: 218px;
-
-    display: block;
-
-    object-fit: cover;
-
-    border-radius: 7px;
-}
-
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+        margin: 0;
+        font-family: Arial, sans-serif;
     }
-
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -188,91 +52,181 @@ justify-content: center;
     .nav-links a:hover {
       color: whitesmoke;
     }
-   footer {
-      width: 100%;
-      box-sizing: border-box;
 
-      background-color: #B7D5F2;
+    .sobre {
+    width: 100%;
+    margin: 0;
+    padding: 19px 12px 45px;
+    box-sizing: border-box;
+}
 
-      border-top: 20px solid #289CD5;
+.sobre h1 {
+    width: 170px;
+    margin: 0 auto 32px;
+    padding: 3px 10px;
+    background-color: #42afe2;
+    color: white;
+    text-align: center;
+    font-size: 21px;
+    font-weight: normal;
+    padding: 15px;
+    border-radius: 20px;
+}
 
-      padding: 40px 20px 14px;
+.sobre-conteudo {
+    width: 100%;
+    display: grid;
 
-      font-family: Arial, sans-serif;
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 16px;
+    row-gap: 0;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.sobre-imagem-1 {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+}
+
+.sobre-imagem-1 img {
+    width: 100%;
+    height: auto;
+    min-height: 218px;
+    display: block;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+
+.sobre-texto-1 {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+}
+
+.sobre-texto-1 p {
+    margin: 0;
+    color: #42afe2;
+    font-size: 28px;
+    font-weight: lighter;
+    line-height: 1.25;
+    text-align: left;
+}
+
+
+.sobre-logo {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.sobre-texto-2 {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    margin: 0;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+.sobre-texto-2 p {
+    margin: 0;
+    color: #42afe2;
+    font-size: 28px;
+    font-weight: 100;
+    line-height: 1.25;
+    text-align: left;
+}
+
+.sobre-imagem-2 {
+    grid-column: 2;
+    grid-row: 3;
+
+    width: 100%;
+    margin-top: 43px;
+}
+
+.sobre-imagem-2 img {
+    width: 100%;
+    height: auto;
+    min-height: 218px;
+    display: block;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+    footer {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #B7D5F2;
+        border-top: 20px solid #289CD5;
+        padding: 40px 20px 14px;
+        font-family: Arial, sans-serif;
     }
-
-
-
 
     .footer-container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 80px;
-      align-items: start;
-      
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 80px;
+        align-items: start;
     }
-
-
 
     .footer-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-
-
 
     .footer-section h3 {
-      width: 108px;
-
-      margin: 0 0 5px;
-
-      padding: 2px 5px;
-
-      box-sizing: border-box;
-
-      border: 1px solid #000;
-      border-radius: 15px;
-
-      color: #333;
-
-      font-size: 13px;
-      font-weight: normal;
-
-      text-align: center;
+        width: 108px;
+        margin: 0 0 5px;
+        padding: 2px 5px;
+        box-sizing: border-box;
+        border: 1px solid #000;
+        border-radius: 15px;
+        color: #333;
+        font-size: 13px;
+        font-weight: normal;
+        text-align: center;
     }
-
-
-
 
     .footer-section a {
-      margin: 0 0 5px;
-
-      color: #555;
-
-      font-size: 13px;
-
-      line-height: 1.25;
-
-      text-decoration: none;
+        margin: 0 0 5px;
+        color: #555;
+        font-size: 13px;
+        line-height: 1.25;
+        text-decoration: none;
     }
-
 
     .footer-section a:hover {
-      text-decoration: underline;
+        text-decoration: underline;
     }
 
- .footer-address {
-    text-align: center;
-    font-size: 15px;
-    margin-top: 10px;
-  }
-
-  </style>
+    .footer-address {
+        text-align: center;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+</style>
 </head>
 
 <body>
@@ -336,7 +290,7 @@ justify-content: center;
 
      
         <div class="sobre-logo">
-            <img src="/logo.png" alt="Clínica Bem Estar">
+            <img src="/logo.svg" alt="Clínica Bem Estar">
         </div>
 
 
