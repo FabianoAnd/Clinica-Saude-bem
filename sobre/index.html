@@ -153,13 +153,18 @@ justify-content: center;
       background-color: white;
       color: #000000;
       padding: 2rem 5rem;
+      border: 2px 2px #000000;
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      width: 175px;
-      height: 85px;
+      grid-column: 1;
+    grid-row: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 70px;
     }
 
     .nav-links {
@@ -183,91 +188,89 @@ justify-content: center;
     .nav-links a:hover {
       color: whitesmoke;
     }
+   footer {
+      width: 100%;
+      box-sizing: border-box;
 
-    footer {
-    width: 100%;
-    box-sizing: border-box;
+      background-color: #B7D5F2;
 
-    background-color: #B7D5F2;
+      border-top: 20px solid #289CD5;
 
-    border: 2px solid #289CD5;
+      padding: 40px 20px 14px;
 
-    padding: 12px 20px 14px;
-
-    font-family: Arial, sans-serif;
-}
-
+      font-family: Arial, sans-serif;
+    }
 
 
 
-.footer-container {
-    width: 100%;
-    max-width: 1000px;
 
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-    column-gap: 80px;
-}
-
-
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
-
-    align-items: flex-start;
-}
+    .footer-container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 80px;
+      align-items: start;
+      
+    }
 
 
 
-.footer-section h3 {
-    width: 108px;
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-    margin: 0 0 5px;
 
-    padding: 2px 5px;
 
-    box-sizing: border-box;
+    .footer-section h3 {
+      width: 108px;
 
-    border: 1px solid #000;
-    border-radius: 15px;
+      margin: 0 0 5px;
 
-    color: #333;
+      padding: 2px 5px;
 
-    font-size: 13px;
-    font-weight: normal;
+      box-sizing: border-box;
 
+      border: 1px solid #000;
+      border-radius: 15px;
+
+      color: #333;
+
+      font-size: 13px;
+      font-weight: normal;
+
+      text-align: center;
+    }
+
+
+
+
+    .footer-section a {
+      margin: 0 0 5px;
+
+      color: #555;
+
+      font-size: 13px;
+
+      line-height: 1.25;
+
+      text-decoration: none;
+    }
+
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+ .footer-address {
     text-align: center;
-}
-
-
-
-
-.footer-section a {
-    margin: 0 0 5px;
-
-    color: #555;
-
-    font-size: 13px;
-
-    line-height: 1.25;
-
-    text-decoration: none;
-}
-
-
-.footer-section a:hover {
-    text-decoration: underline;
-}
-
-.endereco {
-    font-size: 12px;
-    text-align: center;
-    margin: 15px 0 0;
-}
+    font-size: 15px;
+    margin-top: 10px;
+  }
 
   </style>
 </head>
@@ -369,43 +372,44 @@ justify-content: center;
     </div>
 
 </main>
-<footer>
-  <div class="footer-container">
+  <footer>
+    <div class="footer-container">
 
 
       <div class="footer-section">
-          <h3>Institucional</h3>
+        <h3>Institucional</h3>
 
-          <a href="#">Trabalhe conosco</a>
-          <a href="#">Política de privacidade</a>
-          <a href="#">Termos de uso</a>
+        <a href="#">Trabalhe conosco</a>
+        <a href="#">Política de privacidade</a>
+        <a href="#">Termos de uso</a>
       </div>
 
 
       <div class="footer-section">
-          <h3>Ajuda</h3>
+        <h3>Ajuda</h3>
 
-          <a href="#">Central de ajuda</a>
-          <a href="#">Consultas</a>
-          <a href="#">Fale Conosco</a>
+        <a href="#">Central de ajuda</a>
+        <a href="#">Consultas</a>
+        <a href="#">Fale Conosco</a>
       </div>
 
 
 
       <div class="footer-section">
-          <h3>Redes sociais</h3>
+        <h3>Redes sociais</h3>
 
-          <a href="#">Facebook</a>
-          <a href="#">Instagram</a>
-          <a href="#">whatsapp</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">whatsapp</a>
       </div>
 
-  </div>
-  <p class="endereco">
-    R. Escobar Santiago da Silva, 157 Barueri - SP CEP: 06401-000
-</p>
- 
-</footer>
+    </div>
+
+    <p class="footer-address">
+      R. Escobar Santiago da Silva, 157 Barueri - SP CEP: 06401-000
+    </p>
+
+  </footer>
 </body>
 
 </html>
