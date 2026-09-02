@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagina Inicial</title>
+  <title>Home</title>
   <style>
     body {
       margin: 0;
@@ -22,10 +22,14 @@
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      width: 175px;
-      height: 85px;
+      grid-column: 1;
+    grid-row: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 70px;
     }
 
     .nav-links {
@@ -50,9 +54,6 @@
       color: whitesmoke;
     }
 
-
-
-    /* CARROSSEL */
     .carrossel-container {
       position: relative;
       width: 100%;
@@ -60,6 +61,7 @@
       overflow: hidden;
       background-color: #46B6EE;
       padding-top: 20px;
+      padding-bottom: 20px;
     }
 
     .carrossel-slides {
@@ -169,7 +171,7 @@
 
       background-color: #B7D5F2;
 
-      border: 2px solid #289CD5;
+      border-top: 20px solid #289CD5;
 
       padding: 40px 20px 14px;
 
@@ -182,13 +184,12 @@
     .footer-container {
       width: 100%;
       max-width: 1000px;
-
       margin: 0 auto;
-
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-
+      grid-template-columns: repeat(3, 1fr);
       column-gap: 80px;
+      align-items: start;
+      
     }
 
 
@@ -196,8 +197,8 @@
     .footer-section {
       display: flex;
       flex-direction: column;
-
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
     }
 
 
@@ -241,6 +242,66 @@
     .footer-section a:hover {
       text-decoration: underline;
     }
+
+    form {
+      background-color: rgb(127, 212, 252);
+      width: 500px;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 60px auto 100px;
+      box-sizing: border-box;
+      
+    }
+
+    #titulo {
+      text-align: center;
+      padding: 0;
+      margin: 0 0 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      padding: 12px 15px;
+      border-radius: 15px;
+      border: 2px solid #ddd;
+      outline: none;
+      font-size: 15px;
+    }
+
+    #email
+     {
+      padding-left: 15px;
+    }
+
+    #botao {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      background-color: rgb(43, 164, 245);
+      color: white;
+      cursor: pointer;
+      border: none;
+      border-radius: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    #botao:hover {
+      background-color: rgb(33, 134, 201);
+    }
+
+    .footer-address {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+  }
   </style>
 </head>
 
@@ -259,7 +320,7 @@
   </nav>
 
   <main>
-    <!-- CARROSSEL -->
+
     <div class="carrossel-container">
       <div class="carrossel-slides" id="slides">
         <div class="slide">
@@ -280,7 +341,7 @@
 
     <div class="cards-container">
 
-      <!-- CARD 1: MISSÃO -->
+
       <div class="card-institucional">
         <div class="card-imagem">
           <img src="/card1.jpg" alt="Missão">
@@ -293,7 +354,7 @@
         </div>
       </div>
 
-      <!-- CARD 2: VISÃO -->
+
       <div class="card-institucional">
         <div class="card-imagem">
           <img src="/card2.jpg" alt="Visão">
@@ -306,7 +367,7 @@
         </div>
       </div>
 
-      <!-- CARD 3: VALORES -->
+
       <div class="card-institucional">
         <div class="card-imagem">
           <img src="/card3.avif" alt="Valores">
@@ -322,6 +383,24 @@
 
     </div>
   </main>
+
+  <form id="formulario">
+    <h1 id="titulo">Entre em contato</h1>
+
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" placeholder="Example@gmail.com" required>
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" name="telefone" id="telefone" placeholder="(00) 00000-0000" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem" required></textarea>
+
+    <input type="submit" value="Enviar" id="botao">
+  </form>
 
   <footer>
     <div class="footer-container">
@@ -355,9 +434,14 @@
       </div>
 
     </div>
+
+    <p class="footer-address">
+      R. Escobar Santiago da Silva, 157 Barueri - SP CEP: 06401-000
+    </p>
+
   </footer>
 
-  <!-- SCRIPT DO CARROSSEL -->
+
   <script>
     let indexAtual = 0;
 
@@ -375,6 +459,29 @@
 
       slidesContainer.style.transform = `translateX(${-indexAtual * 100}%)`;
     }
+
+    let form = document.getElementById('formulario')
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+
+      let nome = document.getElementById('nome').value
+      let email = document.getElementById('email').value
+      let telefone = document.getElementById('telefone').value
+      let mensagem = document.getElementById('mensagem').value
+
+      console.log("Nome:", nome)
+      console.log("Email:", email)
+      console.log("Telefone:", telefone)
+      console.log("Mensagem:", mensagem)
+
+      alert("Mensagem enviada com sucesso!")
+
+      form.reset()
+    })
+
+
+
   </script>
 
 </body>
