@@ -394,7 +394,7 @@
     <input type="email" name="email" id="email" placeholder="Example@gmail.com" required>
 
     <label for="telefone">Telefone:</label>
-    <input type="tel" name="telefone" id="telefone" placeholder="(00) 00000-0000" required>
+    <input type="text" id="telefone" placeholder="(00) 00000-0000" maxlength="15" />
 
     <label for="mensagem">Mensagem:</label>
     <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem" required></textarea>
@@ -479,6 +479,36 @@
 
       form.reset()
     })
+
+  
+
+
+  const inputTelefone = document.getElementById('telefone');
+
+  inputTelefone.addEventListener('input', (e) => {
+    
+    let apenasNumeros = e.target.value.replace(/\D/g, '');
+
+    
+    if (apenasNumeros.length > 11) {
+      apenasNumeros = apenasNumeros.slice(0, 11);
+    }
+
+  
+    let telefoneFormatado = '';
+    if (apenasNumeros.length > 0) {
+      telefoneFormatado = '(' + apenasNumeros.substring(0, 2);
+    }
+    if (apenasNumeros.length >= 3) {
+      telefoneFormatado += ') ' + apenasNumeros.substring(2, 7);
+    }
+    if (apenasNumeros.length >= 7) {
+      telefoneFormatado += '-' + apenasNumeros.substring(7, 11);
+    }
+
+    
+    e.target.value = telefoneFormatado;
+  });
 
 
 
